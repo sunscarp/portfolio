@@ -1,7 +1,5 @@
 "use client";
-
 import { useEffect, useState } from "react";
-
 const experience = [
   {
     role: "Product & Consulting Intern",
@@ -24,8 +22,25 @@ const experience = [
     ],
   },
 ];
-
 const projects = [
+  {
+    label: "Quant Finance",
+    context: "2025 – Present",
+    title: "Trump Signal Backtester — Interactive Market Impact Analyzer",
+    detail:
+      "Full-stack Streamlit web application quantifying causal impact of Trump's Truth Social posts on financial markets using a next-day return trading strategy. Engineered data pipeline integrating tweet dataset with real-time asset prices via yfinance; implemented regime-aware portfolio construction supporting equal-weight and inverse-volatility weighting. Conducted rigorous statistical analysis including t-tests, OLS regression, and event studies over [-3, +3] windows — replicating academic-style methodology. Features equity curves, return distributions, sentiment breakdowns, per-asset analysis, regression tables, and trade logs with Plotly visualizations and dark-theme UI.",
+    link: "https://trump-vs-xauusd.streamlit.app/",
+    linkLabel: "Live demo",
+  },
+  {
+    label: "Quant Research",
+    context: "Oct 2025",
+    title: "Regime-Aware HRP Portfolio Optimizer",
+    detail:
+      "Quant portfolio tool with hidden Markov regime detection built into a Streamlit dashboard. Outperformed traditional Hierarchical Risk Parity benchmarks on both Sharpe Ratio and Maximum Drawdown.",
+    link: "https://hrp-portfolio.streamlit.app/",
+    linkLabel: "Live demo",
+  },
   {
     label: "Marketplace",
     context: "Freelance · 2024",
@@ -54,15 +69,6 @@ const projects = [
     linkLabel: "GitHub",
   },
   {
-    label: "Quant Research",
-    context: "Oct 2025",
-    title: "Regime-Aware HRP Portfolio Optimizer",
-    detail:
-      "Quant portfolio tool with hidden Markov regime detection built into a Streamlit dashboard. Outperformed traditional Hierarchical Risk Parity benchmarks on both Sharpe Ratio and Maximum Drawdown.",
-    link: "https://hrp-portfolio.streamlit.app/",
-    linkLabel: "Live demo",
-  },
-  {
     label: "Model Validation",
     context: "Jan – Feb 2025",
     title: "Derivatives Pricing Model Validation",
@@ -81,13 +87,11 @@ const projects = [
     linkLabel: "Hugging Face",
   },
 ];
-
 const leadership = [
   "Lead a 70+ member club across 12+ live consulting projects with professors and industry professionals — supervising end-to-end delivery, stakeholder management, and on-time execution.",
   "Generated ₹1L+ in revenue through client projects and events; organised a college-wide case competition with ₹1L+ prize pool.",
   "Designed and published a Product Management learning cohort on the club website; conducted a hands-on Figma prototyping workshop for club members.",
 ];
-
 const skills = [
   {
     title: "Product & Design",
@@ -102,7 +106,6 @@ const skills = [
     items: ["Python", "Pandas / NumPy", "Next.js / React", "TypeScript", "SQL", "R", "VBA", "Git"],
   },
 ];
-
 type Tab = "about" | "experience" | "projects" | "leadership" | "skills";
 const TABS: { id: Tab; label: string }[] = [
   { id: "about", label: "About" },
@@ -111,11 +114,9 @@ const TABS: { id: Tab; label: string }[] = [
   { id: "leadership", label: "Leadership" },
   { id: "skills", label: "Skills" },
 ];
-
 export default function Home() {
   const [activeTab, setActiveTab] = useState<Tab>("about");
   const [theme, setTheme] = useState<"light" | "dark">("light");
-
   // Read initial theme synchronously from the already-applied attribute (set by inline script)
   useEffect(() => {
     try {
@@ -126,7 +127,6 @@ export default function Home() {
       setTheme("light");
     }
   }, []);
-
   useEffect(() => {
     try {
       document.documentElement.setAttribute("data-theme", theme);
@@ -135,11 +135,9 @@ export default function Home() {
       /* ignore */
     }
   }, [theme]);
-
   return (
     <div className="min-h-screen bg-[color:var(--page-bg)] text-[color:var(--page-text)] font-sans">
       <main className="max-w-4xl mx-auto px-6 pb-24">
-
         {/* HEADER */}
         <header className="pt-14 pb-12 border-b border-[color:var(--panel-border)] grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-8 items-end">
           <div>
@@ -182,7 +180,6 @@ export default function Home() {
             </div>
           </div>
         </header>
-
         {/* TABS - Completely rewritten to ensure no arrows */}
         <div className="flex border-b border-[color:var(--panel-border)] mt-10">
           {TABS.map((tab) => (
@@ -191,8 +188,8 @@ export default function Home() {
               onClick={() => setActiveTab(tab.id)}
               className={`
                 relative px-5 py-3 text-[13px] font-medium whitespace-nowrap transition-all duration-200
-                ${activeTab === tab.id 
-                  ? "text-[color:var(--page-text)] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-[color:var(--accent-warm)]" 
+                ${activeTab === tab.id
+                  ? "text-[color:var(--page-text)] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-[color:var(--accent-warm)]"
                   : "text-[color:var(--muted-text)] hover:text-[color:var(--page-text)]"
                 }
               `}
@@ -202,7 +199,6 @@ export default function Home() {
             </button>
           ))}
         </div>
-
         {/* ABOUT */}
         {activeTab === "about" && (
           <section className="pt-10">
@@ -240,7 +236,6 @@ export default function Home() {
             </div>
           </section>
         )}
-
         {/* EXPERIENCE */}
         {activeTab === "experience" && (
           <section className="pt-10">
@@ -272,7 +267,6 @@ export default function Home() {
             </div>
           </section>
         )}
-
         {/* PROJECTS */}
         {activeTab === "projects" && (
           <section className="pt-10">
@@ -307,7 +301,6 @@ export default function Home() {
             </div>
           </section>
         )}
-
         {/* LEADERSHIP */}
         {activeTab === "leadership" && (
           <section className="pt-10">
@@ -337,7 +330,6 @@ export default function Home() {
             </div>
           </section>
         )}
-
         {/* SKILLS */}
         {activeTab === "skills" && (
           <section className="pt-10">
@@ -366,7 +358,6 @@ export default function Home() {
             </div>
           </section>
         )}
-
       </main>
     </div>
   );
