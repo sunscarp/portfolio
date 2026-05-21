@@ -137,14 +137,14 @@ export default function Home() {
   }, [theme]);
   return (
     <div className="min-h-screen bg-[color:var(--page-bg)] text-[color:var(--page-text)] font-sans">
-      <main className="max-w-4xl mx-auto px-6 pb-24">
+      <main className="max-w-4xl mx-auto px-5 sm:px-6 pb-20">
         {/* HEADER */}
         <header className="pt-14 pb-12 border-b border-[color:var(--panel-border)] grid grid-cols-1 sm:grid-cols-[1fr_auto] gap-8 items-end">
           <div>
-            <h1 className="font-serif text-5xl sm:text-6xl leading-[1.05] tracking-tight">
+            <h1 className="font-serif text-3xl sm:text-5xl md:text-6xl leading-[1.05] tracking-tight">
               Sanskar <em className="italic not-italic text-[color:var(--accent-warm)]">Paradeshi</em>
             </h1>
-            <p className="mt-4 text-[15px] text-[color:var(--muted-text)] font-light max-w-md leading-relaxed">
+            <p className="mt-3 text-[14px] sm:text-[15px] text-[color:var(--muted-text)] font-light max-w-md leading-relaxed">
               Building data platforms, marketplaces, and delightful digital products. Product thinker who ships.
             </p>
           </div>
@@ -181,7 +181,7 @@ export default function Home() {
           </div>
         </header>
         {/* TABS - Completely rewritten to ensure no arrows */}
-        <div className="flex border-b border-[color:var(--panel-border)] mt-10">
+        <div className="flex border-b border-[color:var(--panel-border)] mt-8 sm:mt-10 overflow-x-auto scrollbar-hide -mx-5 px-5 sm:mx-0 sm:px-0 gap-4 touch-scroll">
           {TABS.map((tab) => (
             <button
               key={tab.id}
@@ -189,8 +189,8 @@ export default function Home() {
               className={`
                 relative px-5 py-3 text-[13px] font-medium whitespace-nowrap transition-all duration-200
                 ${activeTab === tab.id
-                  ? "text-[color:var(--page-text)] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-[color:var(--accent-warm)]"
-                  : "text-[color:var(--muted-text)] hover:text-[color:var(--page-text)]"
+                  ? "text-[color:var(--page-text)] after:absolute after:bottom-0 after:left-0 after:right-0 after:h-[2px] after:bg-[color:var(--accent-warm)] flex-shrink-0"
+                  : "text-[color:var(--muted-text)] hover:text-[color:var(--page-text)] flex-shrink-0"
                 }
               `}
               style={{ appearance: 'none', WebkitAppearance: 'none' }}
@@ -203,7 +203,7 @@ export default function Home() {
         {activeTab === "about" && (
           <section className="pt-10">
             <p className="text-[11px] font-mono tracking-[0.15em] uppercase text-[color:var(--accent-warm)] mb-1">Who I am</p>
-            <h2 className="font-serif text-4xl leading-tight mb-8">
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl leading-tight mb-6 sm:mb-8">
               Product thinker,<br />builder, economist.
             </h2>
             <div className="grid grid-cols-1 md:grid-cols-[1.1fr_0.9fr] gap-8">
@@ -240,7 +240,7 @@ export default function Home() {
         {activeTab === "experience" && (
           <section className="pt-10">
             <p className="text-[11px] font-mono tracking-[0.15em] uppercase text-[color:var(--accent-warm)] mb-1">Work</p>
-            <h2 className="font-serif text-4xl leading-tight mb-8">
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl leading-tight mb-6 sm:mb-8">
               Shipping with teams<br />that deliver.
             </h2>
             <div className="divide-y divide-[color:var(--panel-border)] border-t border-[color:var(--panel-border)]">
@@ -271,7 +271,7 @@ export default function Home() {
         {activeTab === "projects" && (
           <section className="pt-10">
             <p className="text-[11px] font-mono tracking-[0.15em] uppercase text-[color:var(--accent-warm)] mb-1">Selected work</p>
-            <h2 className="font-serif text-4xl leading-tight mb-8">
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl leading-tight mb-6 sm:mb-8">
               Products that move<br />the needle.
             </h2>
             <div className="border border-[color:var(--panel-border)] rounded-xl overflow-hidden divide-y divide-[color:var(--panel-border)]">
@@ -305,7 +305,7 @@ export default function Home() {
         {activeTab === "leadership" && (
           <section className="pt-10">
             <p className="text-[11px] font-mono tracking-[0.15em] uppercase text-[color:var(--accent-warm)] mb-1">Leadership</p>
-            <h2 className="font-serif text-4xl leading-tight mb-8">
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl leading-tight mb-6 sm:mb-8">
               Building the club<br />from the inside.
             </h2>
             <div className="border border-[color:var(--panel-border)] rounded-xl overflow-hidden">
@@ -334,7 +334,7 @@ export default function Home() {
         {activeTab === "skills" && (
           <section className="pt-10">
             <p className="text-[11px] font-mono tracking-[0.15em] uppercase text-[color:var(--accent-warm)] mb-1">Toolkit</p>
-            <h2 className="font-serif text-4xl leading-tight mb-8">
+            <h2 className="font-serif text-2xl sm:text-3xl md:text-4xl leading-tight mb-6 sm:mb-8">
               Product, analytics,<br />and engineering.
             </h2>
             <div className="border border-[color:var(--panel-border)] rounded-xl overflow-hidden divide-y divide-[color:var(--panel-border)]">

@@ -119,3 +119,18 @@ body {
 nav::-webkit-scrollbar-button {
   display: none;
 }
+
+/* Utilities */
+/* Hide native scrollbars but keep element scrollable */
+.scrollbar-hide {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
+.scrollbar-hide::-webkit-scrollbar {
+  display: none; /* Chrome, Safari, Opera */
+}
+
+/* Smooth touch scrolling on iOS */
+.touch-scroll {
+  -webkit-overflow-scrolling: touch;
+}

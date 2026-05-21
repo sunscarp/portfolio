@@ -21,6 +21,7 @@ export default function RootLayout({
   return (
     <html lang="en" data-theme="light" className={`${inter.variable} h-full antialiased`}>
       <head>
+        <meta name="viewport" content="width=device-width,initial-scale=1" />
         {/* Inline script to set theme before React hydrates to avoid flash */}
         <script
           dangerouslySetInnerHTML={{
