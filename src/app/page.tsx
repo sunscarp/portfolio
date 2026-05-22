@@ -24,13 +24,21 @@ const experience = [
 ];
 const projects = [
   {
+    label: "M&A / Valuation",
+    context: "May 2026",
+    title: "M&A Valuation Intelligence Platform",
+    detail: "End-to-end M&A valuation platform performing 3-stage DCF, trading comps, and precedent transaction analyses with WACC derivation, mid-year discounting, and interactive Plotly sensitivity heatmaps. Exports investor-ready branded PDF reports via ReportLab. Integrated a Groq LLM pipeline to auto-generate and validate valuation assumptions (growth rates, margins, control premium) with schema normalization and human-readable rationales — cutting manual assumption-drafting time significantly. Built with Python, Streamlit, ReportLab, Groq LLM, and yfinance.",
+    link: "https://mergers-acquisition-analysis.streamlit.app/", // update with actual link
+    linkLabel: "Live Platform",
+  },
+  {
     label: "Quant Finance",
-    context: "2025 – Present",
+    context: "April 2026",
     title: "Trump Signal Backtester — Interactive Market Impact Analyzer",
     detail:
       "Full-stack Streamlit web application quantifying causal impact of Trump's Truth Social posts on financial markets using a next-day return trading strategy. Engineered data pipeline integrating tweet dataset with real-time asset prices via yfinance; implemented regime-aware portfolio construction supporting equal-weight and inverse-volatility weighting. Conducted rigorous statistical analysis including t-tests, OLS regression, and event studies over [-3, +3] windows — replicating academic-style methodology. Features equity curves, return distributions, sentiment breakdowns, per-asset analysis, regression tables, and trade logs with Plotly visualizations and dark-theme UI.",
     link: "https://trump-vs-xauusd.streamlit.app/",
-    linkLabel: "Live demo",
+    linkLabel: "Live Demo",
   },
   {
     label: "Quant Research",
